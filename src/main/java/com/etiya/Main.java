@@ -79,5 +79,14 @@ public class Main {
     System.out.println("*-----");
     System.out.println(car.getBrand()); // get
     System.out.println(car.getModel()); // get
+
+
+    Product product = new Product();
+
+    // Bağlılık -> Sıkı-Gevşek
+    // Loose Coupling
+    ProductRepo productRepository = new ProductRepository();
+    productRepository.save(product);
+    // Sürdürülebilirlik
   }
 }
