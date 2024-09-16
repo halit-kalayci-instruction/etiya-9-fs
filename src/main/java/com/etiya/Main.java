@@ -85,8 +85,30 @@ public class Main {
 
     // Bağlılık -> Sıkı-Gevşek
     // Loose Coupling
-    ProductRepo productRepository = new ProductRepository();
-    productRepository.save(product);
     // Sürdürülebilirlik
+
+    ProductRepo productRepository = new ProductRepository();
+    ProductService productService = new ProductService(productRepository);
+    productService.save(product);
+
+    ProductRepo productRepository2 = new MysqlProductRepository();
+    ProductService productService2 = new ProductService(productRepository2);
+    productService2.save(product);
   }
 }
+
+// Dependency Injection
+
+// Bir konsol uygulaması;
+
+// kodlama.io web sitesini inceleyin
+// buradaki tüm nesneleri (oop) kodlayın.
+// konsolda (veriler fake olacak) ilk açılışta kurslar listelensin
+// kursların listelenme, eklenme, silme işlemleri bulunsun.
+// repository-service gibi işlevleri kullanmaya dikkat edin.
+// In-memory
+
+// Web nedir, nasıl çalışır. Http(s) nedir? Request-Response nedir? bunları araştırmanız.
+// 17.09
+
+// Spring - WEB
